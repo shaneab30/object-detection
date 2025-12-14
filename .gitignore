@@ -1,0 +1,4 @@
+test.v3-datasetv1.yolov11
+runs/detect/train
+.env
+test.v3-datasetv1.yolov11.zip
