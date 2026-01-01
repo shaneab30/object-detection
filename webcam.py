@@ -3,7 +3,7 @@ import supervision as sv
 import cv2
 from collections import defaultdict, deque
 
-model = YOLO("best-yolov11s-datasetv14-95P-84R-91A.pt")
+model = YOLO("best-yolov11s-datasetv15-89P-87R-92A.pt")
 
 cap = cv2.VideoCapture(0)
 
