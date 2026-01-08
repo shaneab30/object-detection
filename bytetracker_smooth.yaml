@@ -1,0 +1,8 @@
+tracker_type: bytetrack
+track_high_thresh: 0.5    # High confidence threshold
+track_low_thresh: 0.2     # Low confidence (keeps tracks alive longer)
+new_track_thresh: 0.6     # Higher = fewer new tracks
+track_buffer: 60          # Keep tracks for 60 frames when lost (increase this!)
+match_thresh: 0.8         # IoU threshold for matching
+min_box_area: 10
+mot20: False

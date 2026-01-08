@@ -17,7 +17,7 @@ tracked_objects = defaultdict(dict)
 CONFIDENCE_THRESHOLD = 0.6
 TRACKING_ITERS = 1  # Enable ByteTrack tracking
 
-model = YOLO("best-yolov11s-datasetv15-89P-87R-92A.pt")
+model = YOLO("best-yolov11s-datasetv18-95P-85R-92A.pt")
 
 @app.route('/')
 def index():
@@ -53,7 +53,14 @@ def handle_image(data):
         start = time.time()
         
         # Enable tracking with YOLO
-        results = model.track(frame, conf=0.4, imgsz=640, persist=True, tracker="bytetrack.yaml")[0]
+        results = model.track(
+            frame, 
+            conf=0.5, 
+            imgsz=320,  # Smaller = faster (try 320 for even more speed)
+            persist=True, 
+            tracker="bytetrack.yaml",
+            verbose=False  # Disable verbose logging for speed
+        )[0]
         
         end = time.time()
         fps = 1.0 / (end - start)
